@@ -1,0 +1,308 @@
+$box-color: rgba(255, 255, 255, 0.25);
+$font-color: rgba(255, 255, 255, 0.75);
+
+.weather {
+  width: 100%;
+  padding: 0 1rem;
+  height: calc(100vh - 60px - 2rem);
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transition: .3s;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.on {
+    height: calc(100vh - 232px - 4.5rem);
+  }
+
+  .weather_inner {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+
+    .current {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+
+      .box_1 {
+        height: 320px;
+        padding: 1rem;
+        background-color: $box-color;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+
+        figure {
+          width: fit-content;
+          height: fit-content;
+        }
+
+        .info {
+          text-align: center;
+          color: $font-color;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          h2 {
+            font-family: 'Light';
+          }
+
+          & > p {
+            font-size: clamp(0.9rem, 1vw, 1rem);
+          }
+
+          .temp {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            font-family: 'Light';
+            font-size: clamp(0.9rem, 1vw, 1rem);
+          }
+        }
+      }
+
+      .box_2 {
+        height: 320px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .wind {
+          width: 100%;
+          height: 180px;
+          padding: 1rem;
+          background-color: $box-color;
+          border-radius: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          .title {
+            font-size: clamp(0.85rem, 1vw, 1rem);
+            color: $font-color;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+          }
+
+          .info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: center;
+
+            figure {
+              width: 72px;
+              padding: 0.5rem;
+
+              img {
+                filter: invert(100%);
+              }
+            }
+
+            p {
+              font-size: clamp(1.15rem, 1vw, 1.3rem);
+              color: $font-color;
+            }
+          }
+        }
+
+        .air_box {
+          width: 100%;
+          display: flex;
+          gap: 1rem;
+
+          & > div {
+            width: calc((100% - 1rem) / 2);
+            height: 124px;
+            padding: 1rem;
+            background-color: $box-color;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            .title {
+              font-size: clamp(0.85rem, 1vw, 1rem);
+              color: $font-color;
+              display: flex;
+              gap: 0.5rem;
+              align-items: center;
+            }
+
+            .info {
+              text-align: center;
+              color: $font-color;
+              font-size: clamp(1.15rem, 1vw, 1.3rem);
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .time_weather {
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem auto;
+
+    .item_wrap {
+      width: 100%;
+      height: 240px;
+    }
+
+    .item {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      color: $font-color;
+      background-color: $box-color;
+      border-radius: 1rem;
+      padding: 0 1rem;
+
+      .time {
+        font-size: clamp(0.85rem, 1vw, 0.95rem);
+      }
+
+      figure {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+
+        .temp {
+          font-size: clamp(1.1rem, 1vw, 1.2rem);
+        }
+
+        .humidity {
+          display: flex;
+          gap: 0.25rem;
+          align-items: center;
+          font-size: clamp(0.85rem, 1vw, 0.95rem);
+        }
+      }
+    }
+  }
+
+  .fivedays {
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: 0.5rem 2rem;
+    background-color: $box-color;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    .item {
+      height: calc((600px - 6rem) / 6);
+      display: flex;
+      gap: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
+
+      .date {
+        width: 28px;
+        text-align: center;
+        color: $font-color;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .info {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .icon {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+
+          figure {
+            width: 80px;
+            height: 80px;
+            padding: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        .temp {
+          width: 120px;
+          display: flex;
+          gap: 0.5rem;
+
+          p {
+            width: 50%;
+            text-align: center;
+            color: $font-color;
+            font-size: clamp(0.9rem, 1vw, 1rem);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    height: calc(100vh - 120px - 3rem);
+
+    &.on {
+      height: calc(100vh - 292px - 5.5rem);
+    }
+  }
+
+  @media screen and (max-width: 512px) {
+    .weather_inner {
+      .current {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .fivedays {
+        .item {
+          .info {
+            gap: 0.5rem;
+
+            .icon {
+              gap: 0;
+
+              figure {
+                width: 50px;
+                height: 50px;
+              }
+            }
+
+            .temp {
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

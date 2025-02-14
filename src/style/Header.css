@@ -1,0 +1,145 @@
+header {
+  width: 100%;
+  padding: 1rem;
+}
+header .header_inner {
+  width: 100%;
+  max-width: 600px;
+  height: 60px;
+  overflow: hidden;
+  margin: auto;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: height 0.3s;
+}
+header .header_inner > p {
+  height: 100%;
+  align-content: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+header .header_inner.on {
+  height: calc(232px + 2.5rem);
+}
+header .header_inner .header_wrap {
+  width: 100%;
+  height: calc(60px - 2rem);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.75);
+}
+header .header_inner .header_wrap .current_location {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+header .header_inner .header_wrap .current_location svg {
+  cursor: pointer;
+}
+header .header_inner .header_wrap .search {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  cursor: pointer;
+}
+header .header_inner .search_wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+header .header_inner .search_wrap .input_form {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+header .header_inner .search_wrap .input_form input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Regular";
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+}
+header .header_inner .search_wrap .input_form input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+header .header_inner .search_wrap .input_form button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  cursor: pointer;
+}
+header .header_inner .search_wrap .keyword_box {
+  width: 100%;
+  height: 120px;
+  padding: 0 1rem;
+}
+header .header_inner .search_wrap .keyword_box > p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+}
+header .header_inner .search_wrap .keyword_box .recent_list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+header .header_inner .search_wrap .keyword_box .recent_list ul {
+  height: calc(100% - 16px - 1rem);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+header .header_inner .search_wrap .keyword_box .recent_list ul::-webkit-scrollbar {
+  width: 0;
+}
+header .header_inner .search_wrap .keyword_box .recent_list ul li {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Light";
+  font-size: clamp(0.85rem, 1vw, 0.9rem);
+}
+header .header_inner .search_wrap .keyword_box .recent_list ul li p {
+  cursor: pointer;
+}
+header .header_inner .search_wrap .keyword_box .recent_list ul li svg {
+  cursor: pointer;
+}
+header .header_inner .search_wrap .keyword_box .recent_list button {
+  align-self: flex-end;
+  border: none;
+  background-color: transparent;
+  font-family: "Regular";
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  header {
+    padding-top: calc(60px + 2rem);
+  }
+}
+
+/*# sourceMappingURL=Header.css.map */

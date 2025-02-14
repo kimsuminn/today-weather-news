@@ -1,0 +1,115 @@
+.news {
+  width: 100%;
+  padding: 0 1rem;
+  height: calc(100vh - 60px - 2rem);
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.news::-webkit-scrollbar {
+  display: none;
+}
+.news .news_wrap {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+.news .news_wrap .item {
+  width: 100%;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.news .news_wrap .item figure {
+  width: 168px;
+  height: 168px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.news .news_wrap .item figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.news .news_wrap .item .news_info {
+  max-width: 384px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.75);
+}
+.news .news_wrap .item .news_info .text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.news .news_wrap .item .news_info .text h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Bold";
+  font-size: clamp(1.3rem, 1vw, 1.5rem);
+}
+.news .news_wrap .item .news_info .text .write_info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+.news .news_wrap .item .news_info a {
+  align-self: flex-end;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+.news .news_wrap .item .news_info a:hover {
+  gap: 0.5rem;
+}
+@media screen and (max-width: 1024px) {
+  .news {
+    height: calc(100vh - 120px - 3rem);
+  }
+}
+@media screen and (max-width: 632px) {
+  .news .news_wrap .item {
+    height: 400px;
+    flex-direction: column;
+  }
+  .news .news_wrap .item figure {
+    width: 100%;
+    height: 240px;
+  }
+  .news .news_wrap .item figure img {
+    object-position: center center;
+  }
+  .news .news_wrap .item .news_info {
+    max-width: 100%;
+    height: calc(160px - 1rem);
+  }
+  .news .news_wrap .item .news_info .text {
+    max-width: 100%;
+  }
+  .news .news_wrap .item .news_info .text h2 {
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    white-space: unset;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/*# sourceMappingURL=News.css.map */
