@@ -6,22 +6,22 @@ function FiveDaysWeather() {
 
   const { currentLocation, searchCity } = useSelector(state => state.weather);
   const { data } = useFiveDaysWeather(currentLocation.lat, currentLocation.lon, searchCity);
-  
+
   const groupByWeather = (data) => {
     if (data) {
-      const group = new Map();
+      const group = {};
 
       data.forEach(item => {
         const date = new Date(item.dt * 1000).toISOString().slice(0, 10);
-  
-        if (!group.has(date)) {
-          group.set(date, []);
+
+        if (!(date in group)) {
+          group[date] = [];
         }
-  
-        group.get(date).push(item);
+
+        group[date].push(item);
       });
-  
-      return Array.from(group.values());
+
+      return Object.values(group);
     }
   }
 

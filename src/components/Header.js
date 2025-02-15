@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { useCurrentWeather } from '../hook/useCurrentWeather';
@@ -40,6 +40,22 @@ function Header() {
     }
   }, [error, pendingValue])
 
+  const inputRef = useRef('');
+  const clickSearch = () => {
+    dispatch(clickSearchBtn(!searchBtnClick));
+    let focusTime;
+
+    if (!searchBtnClick) {
+      focusTime = setTimeout(() => {
+        inputRef.current.focus();
+      }, 300);
+    } else {
+      if (focusTime) {
+        clearTimeout(focusTime);
+      }
+    }
+  }
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -78,7 +94,7 @@ function Header() {
                 <FontAwesomeIcon icon={faLocationDot} onClick={initKeywrod}/>
                 <p>{data?.name}</p>
               </div>
-              <div className="search" onClick={() => dispatch(clickSearchBtn(!searchBtnClick))}>
+              <div className="search" onClick={clickSearch}>
                 {
                   searchBtnClick ? <FontAwesomeIcon icon={faArrowUp} /> : <FontAwesomeIcon icon={faMagnifyingGlass} />
                 }
@@ -91,6 +107,7 @@ function Header() {
                     placeholder="지역/도시명을 영문으로 입력해주세요."
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
+                    ref={inputRef}
                   />
                   <button type="submit"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
                 </form>
