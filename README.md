@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Today's Weather & News
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Open Weather API와 News Data API를 활용하여 제작한 반응형 웹 페이지
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+## 개요
 
-### `npm start`
+### 📅 기간
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2024.02.10(월) - 2024.02.14(금)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🛠️ 사용 기술
 
-### `npm test`
+- React.js
+- React Query
+- Redux Toolkit
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+## 화면 소개
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 현재 날씨 상태와 온도, 습도, 풍속 등 기본 정보 표시
+  
+  화면의 최상단에 적혀있는 현재 지역의 왼쪽에 있는는 버튼을 클릭하면 현재 나의 위치에 해당하는 지역의 날씨를 볼 수 있고, 오른쪽 버튼을 클릭하면 검색창이 나타남
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ![1](./readme/1.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 날씨 상태나 시간에 따라 달라지는 배경색
 
-### `npm run eject`
+  __낮__
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  ![2](./readme/2.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  __밤__
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  ![3](./readme/3.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  __흐릴 때__
 
-## Learn More
+  ![1](./readme/1.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 3시간 간격의 날씨 정보 표시
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  ![4](./readme/4.png)
 
-### Code Splitting
+- 5-6일간의 요일 별 날씨 정보 표시
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  ![5](./readme/5.png)
 
-### Analyzing the Bundle Size
+- 원하는 지역의 날씨를 검색할 수 있는 검색창
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  - 검색어를 입력하고 버튼을 누르거나 키보드의 엔터키를 누르면 해당 지역의 날씨 정보가 뜨고, 검색창 하단에 최근 검색어 기록에 검색한 지역이 추가됨
+  - 최근 검색어를 클릭하면 해당 지역의 날씨를 볼 수 있고, 검색어 옆의 X 버튼을 누르면 해당 검색어가 삭제됨
+  - 전체삭제 버튼을 누르면 최근 검색 기록을 모두 지울 수 있음
 
-### Making a Progressive Web App
+  ![6](./readme/6.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  ![7](./readme/7.png)
 
-### Advanced Configuration
+- 뉴스 페이지
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  화면 제일 왼쪽의 메뉴바를 통해 뉴스 페이지로 이동할 수 있음
 
-### Deployment
+  ![8](./readme/8.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br>
