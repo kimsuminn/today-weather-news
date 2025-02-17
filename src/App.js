@@ -31,12 +31,12 @@ function App() {
   const backgroundColor = (data) => {
     if (data) {
       if (!['01', '02'].includes(data.slice(0, 2))) {
-        return 'linear-gradient(180deg, rgba(124,124,124,1) 0%, rgba(36,88,138,1) 100%)';
+        return 'linear-gradient(225deg, rgba(73,73,73,1) 0%, rgba(145,190,243,1) 100%)';
       } else {
         if (data.includes('d')) {
-          return 'linear-gradient(180deg, rgba(55,152,247,1) 0%, rgba(32,19,158,1) 100%)';
+          return 'linear-gradient(45deg, rgba(168,200,237,1) 0%, rgba(79,112,222,1) 100%)';
         } else {
-          return 'linear-gradient(180deg, rgba(26,28,59,1) 0%, rgba(1,0,14,1) 100%)';
+          return 'linear-gradient(45deg, rgba(89,97,137,1) 0%, rgba(38,21,72,1) 100%)';
         }
       }
     }
